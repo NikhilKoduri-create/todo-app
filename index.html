@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My To-Do App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">YOUR PERSONAL PLANNER</p>
+        <h1>My Tasks <span>✦</span></h1>
+        <p class="subtitle">Small steps. Big progress.</p>
+      </div>
+      <div class="date" id="today"></div>
+    </header>
+
+    <section class="summary">
+      <div>
+        <p class="summary-label">Total tasks</p>
+        <h2 id="total-count">0</h2>
+      </div>
+      <div>
+        <p class="summary-label">Completed</p>
+        <h2 id="completed-count">0</h2>
+      </div>
+      <div>
+        <p class="summary-label">Remaining</p>
+        <h2 id="remaining-count">0</h2>
+      </div>
+    </section>
+
+    <form id="task-form" class="task-form">
+      <input
+        id="task-input"
+        type="text"
+        placeholder="What do you need to do?"
+        maxlength="120"
+        autocomplete="off"
+        required
+      >
+      <button type="submit">+ Add task</button>
+    </form>
+
+    <nav class="filters" aria-label="Filter tasks">
+      <button class="filter active" data-filter="all" type="button">All</button>
+      <button class="filter" data-filter="pending" type="button">Pending</button>
+      <button class="filter" data-filter="completed" type="button">Completed</button>
+    </nav>
+
+    <section>
+      <ul id="task-list" class="task-list"></ul>
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon">✧</div>
+        <h3>No tasks yet</h3>
+        <p>Add your first task and make today count.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Made with focus & care</span>
+      <button id="clear-completed" class="clear-button" type="button">
+        Clear completed
+      </button>
+    </footer>
+  </main>
+</body>
+</html>
